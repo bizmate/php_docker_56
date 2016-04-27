@@ -11,6 +11,6 @@ RUN apt-get update && apt-get install -y \
         && docker-php-ext-install -j$(nproc) iconv mcrypt gettext intl \
         && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
         && docker-php-ext-install -j$(nproc) gd \
-        && chown -R www-data:www-data /var/www
-        && mkdir -p /var/www/portal-cache
+        && chown -R www-data:www-data /var/www \
+        && mkdir -p /var/www/portal-cache \
         && chmod 777 /var/www/portal-cache
